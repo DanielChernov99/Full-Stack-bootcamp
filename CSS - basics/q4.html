@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q4 exercise</title>
+    <style>
+        .box{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            box-shadow: 10px 10px 5px grey;
+        }
+        #first{
+            background-color: #F25022;
+        }
+        #second{
+            background-color: #7FBA00;
+        }
+        #third{
+            background-color: #00A4EF;
+        }
+        #forth{
+            background-color: #FFB900;
+        }
+        #container{
+            background-color: rgb(187, 187, 187);
+            width: 250px;
+        }
+        .button{
+            background-color: #11f800;
+        }
+        input{
+            border: none;
+            width: 200px;
+            height: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+      <span class="box" id="first"></span>
+      <span class="box" id="second"></span>
+      <!-- i added this to make it similar to some logo -->
+      <br>
+      <span class="box" id="third"></span>
+
+      <span class="box" id="forth"></span> 
+      <!-- end -->
+      <div class="prompt">Name:</div>
+      <input type="text" placeholder="Your name">
+      <div class="prompt">Age:</div>
+      <input type="number" placeholder="How old?">
+      <button class="button">Win</button>
+    </div>
+
+</body>
+</html>
