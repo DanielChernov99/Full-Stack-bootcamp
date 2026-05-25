@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q1 CSS Positions</title>
+    <style>
+        *{
+            margin: 0;
+        }
+
+        .img-container{
+            position: relative;
+            width: 40%;
+            /* margin: 0 auto; */
+            margin-inline: auto;
+            aspect-ratio: 1/1;
+        }
+        
+        img{
+            height: 100%;
+            width: 100%;
+        }
+
+        p{
+            position: absolute;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        #top_left{
+            top:0;
+            left:0
+
+        }
+        #top_right{
+            top:0;
+            right:0;
+        }
+        #bottom_right{
+            bottom: 0;
+            right:0;
+
+        }
+        #bottom_left{
+            bottom: 0;
+            left:0;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="img-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/960px-Cat_November_2010-1a.jpg">
+        <p id="top_left">top left</p>
+        <p id="top_right">top right</p>
+        <p id="bottom_right">bottom right</p>
+        <p id="bottom_left">bottom left</p>
+    </div>
+</body>
+</html>
