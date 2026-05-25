@@ -5,15 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>q2 CSS CALC</title>
     <style>
-        
+
+        *{
+            box-sizing: border-box;
+        }
+
+        h1{
+            width: 50%;
+            margin:0 auto;
+            text-align: center;            
+        }
+        .box-container{            
+            display: flex;
+            margin:0 auto;
+            width: 40%;
+        }
+        section{
+            width: calc(100% / 3);
+            background-color: rgb(255, 46, 81);
+            border: 3px solid black;
+            aspect-ratio: 1/1;
+        }
+
     </style>
 
 </head>
 <body>
+    <h1>Ex 2</h1>
     <div class="box-container">
         <section id="firstSection" class="section"></section>
         <section id="secondSection" class="section"></section>
-        <section id="ThirdSection" class="section"></section>
+        <section id="thirdSection" class="section"></section>
     </div>
     
 </body>
