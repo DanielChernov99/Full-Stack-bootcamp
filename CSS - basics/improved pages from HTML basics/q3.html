@@ -4,31 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>q3 exercise</title>
+    <style>
+        body{
+            background-color: #2c3d50;
+            font-family: sans-serif;
+        }
+        h1{
+            color: #F39C13;
+            text-align: center;
+            font-weight: bold;
+        }
+        h2{
+            color: #E74B3C;
+            font-weight: bold;
+            font-size: 26px;
+        }
+        .project-card{
+            margin: 10px;
+        }
+        .project-card h3{
+            color: #3498DB;
+        }
+        .info-card li{
+            color: #B09631;
+            font-size: 18px;
+        }
+        .project-card p{
+            color: white;
+            margin: 10px 0;
+        }       
+        a{
+            color: #1CB99A;
+            text-decoration: none;
+            
+        }
+        .buttom{
+            padding: 10px;
+        }
+        .project-card img{          
+            height: 200px;
+            width: 400px;
+            border: 1px solid whitesmoke;
+            border-radius: 10px;
+            display: block;
+
+        }
+        hr{
+            border: 1px solid #E74B3C;
+        }
+        .description-label {
+            color: #B09631;
+            font-size: 18px;
+        }
+
+    </style>
+
+
 </head>
 <body id="top">
     <h1>Daniel Chernov - Portfolio</h1>
-    <h2>My projects</h2>
-    <section>
+    <h2>My projects</h2><hr>
+    <section class="project-card">
         <h3>Project 1 - Weather App</h3>
-        <img width="400px" height="200px" alt="picture of the weather app" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-G35IcAR42cuqz-EZ-EkpddEYK_-V44Uk_A&s"><br>
-        <p><b>Description :</b> I made this app during my degree</p><br>
+        <img alt="picture of the weather app" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-G35IcAR42cuqz-EZ-EkpddEYK_-V44Uk_A&s">
+        <p><span class="description-label">Description :</span> I made this app during my degree</p><br>
         <a href="https://www.accuweather.com/" target="_blank"> Visit my app</a>
 
     </section> <hr>
-    <section>
+    <section class="project-card">
         <h3>Project 2 - Unity Game</h3>
-        <img width="400px" height="200px" alt="picture of Unity game" src="https://github.com/DanielChernov99/ActiveSaga/blob/main/Part2/ActiveSaga-Game/Assets/ActiveSaga/Game%20Assets/Images/Logo.png?raw=true"><br>
-        <p><b>Description :</b> I made this app during my degree</p><br>
+        <img  alt="picture of Unity game" src="https://github.com/DanielChernov99/ActiveSaga/blob/main/Part2/ActiveSaga-Game/Assets/ActiveSaga/Game%20Assets/Images/Logo.png?raw=true">
+        <p><span class="description-label">Description :</span> I made this app during my degree</p><br>
         <a href="https://github.com/DanielChernov99/ActiveSaga" target="_blank"> View on Github</a>
     </section> <hr>
-    <section>
-        <h3>Contact Information</h3>
+    <h2>Contact Information</h2>
+    <section class="info-card">      
         <ul>
             <li>Email: <a href="mailto:chernov.dani@gmail.com">chernov.dani@gmail.com</a></li>
             <li>Github: <a href="https://github.com/DanielChernov99">My Github</a></li>
             <li>LinkedIn: <a href="https://www.linkedin.com/in/daniel-chernov1/">My LinkedIn</a></li>
         </ul>
     </section>
-    <a href="" >Back to top</a>
+    <a class ="buttom" href="#top" >Back to top</a>
 </body>
 </html>
