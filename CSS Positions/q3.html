@@ -4,8 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .background{
+            background-color: #46409c;
+            width: 40%;
+            aspect-ratio: 2/1;
+            margin-inline: auto;
+            position: relative;
+        }
+        .text{
+            position: absolute;
+            font-size: 22px;
+        }
+        #time{
+            bottom: 0;
+            right: 0;
+        }
+        .bar{
+            background-color: #c5c5c5;
+            position: absolute;
+            width: 10%;
+            bottom: 0;
+            margin: 0 5px;
+        }
+        #bar-1{
+            height: 10%;
+        }
+        #bar-2{
+            left:15%;
+            height: 50%;
+        }
+        #bar-3{
+            left:30%;
+            height: 90%;
+        }
+        #bar-4{
+            left:45%;
+            height: 80%;
+        }
+        #bar-5{
+            left:60%;
+            height: 65%;
+        }
+        #bar-6{
+            left:75%;
+            height: 45%;
+        }
+
+    </style>
+
 </head>
 <body>
-    
+    <div class="background">
+        <div class="text" id="money">Money</div>
+        <div class="text" id="time">Time</div>
+        <div class="bar" id="bar-1"></div>
+        <div class="bar" id="bar-2"></div>
+        <div class="bar" id="bar-3"></div>
+        <div class="bar" id="bar-4"></div>
+        <div class="bar" id="bar-5"></div>
+        <div class="bar" id="bar-6"></div>
+    </div>
+
 </body>
 </html>
