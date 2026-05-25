@@ -21,7 +21,9 @@
             box-sizing: border-box;
             width: 55%;
             margin: 0 auto;
-            background-color: #FFFFFF;         
+            background-color: #FFFFFF;
+            border-radius: 10px;  
+            padding: 5px;       
         } 
         .form-container fieldset{
             background-color: #ECF0F1;
@@ -35,12 +37,11 @@
         .form-container legend{
             background-color: white;
             color: #2980B9;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 0 10px;
         }
         .form-container input{
-            border-radius: 4px;
-            border: 2px solid #D2D8DA;
-        }
-        .form-container radio{
             border-radius: 4px;
             border: 2px solid #D2D8DA;
         }
@@ -50,12 +51,25 @@
         .form-container #msg_box{
             font-size: 20px;
         } 
+        .form-container input[type="radio"]{
+            width: 14px;
+            height: 14px;
+            accent-color: #033cf8;
+        }
+        .form-container select{
+            border-radius: 4px;
+            border: 2px solid #D2D8DA;
+            padding:5px 2px;
+        }
+
         button{
             border-radius: 5px;
-            padding: 3%;
+            border: none;
+            padding: 14px 28px;
             color: #F4FAF6;
-            margin: 5%;
-            font-size: 100%;
+            margin: 0 10px 20px 40px;
+            font-size: 18px;
+            font-weight: bolder;
         }
         #btnSendMessage{
             background-color: #25AF60;
@@ -110,13 +124,13 @@
                 
                 
                 <p>Priority: </p>
-                <input type="radio" name="low" value="low">
-                <label for="low">Low</label>
+                <input id="low_radio" type="radio" name="priority" value="low">
+                <label for="low_radio">Low</label>
 
-                <input type="radio" name="medium" value="medium">
-                <label for="medium">Medium</label>
+                <input id="medium_radio" type="radio" name="priority" value="medium">
+                <label for="medium_radio">Medium</label>
 
-                <input id="high_radio" type="radio" name="high" value="high">
+                <input id="high_radio" type="radio" name="priority" value="high">
                 <label for="high_radio">High</label>
 
                 
