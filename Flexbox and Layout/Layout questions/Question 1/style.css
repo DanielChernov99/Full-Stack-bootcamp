@@ -17,7 +17,7 @@
 
 .header-container{
     flex: 1;
-    background-color: #6A6FD6;
+    background: linear-gradient(to right, #677BE6, #6D66C7, #754BA3);
 }
 
 /* --------------------------- */
