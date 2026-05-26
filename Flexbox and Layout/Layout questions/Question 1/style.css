@@ -1,5 +1,7 @@
 *{
-    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .site-container {
@@ -7,11 +9,40 @@
   flex-direction: column;
   min-height: 100vh;
 }
+/* --------------------------- */
+/* Header (TOP) related stuff */
+/* --------------------------- */
 
-.main-container{
-    flex:1;
+
+.header-container{
+    background-color: rgb(229, 255, 0);
 }
+
+/* --------------------------- */
+/* Main (MIDDLE) related stuff */
+/* --------------------------- */
+.main-container{
+    display: flex;
+    flex:1;
+    background-color: #f30000;
+}
+.main-content-container{
+    flex: 1;
+}
+
+.nav-container{
+    background-color: blue;
+}
+.sidebar-container{
+    background-color: #2bff00;
+}
+
+/* ----------------------------- */
+/* footer (BOTTOM) related stuff */
+/* ----------------------------- */
 
 .footer-container{
-
+    background-color: #6c00fa;
 }
+
+
