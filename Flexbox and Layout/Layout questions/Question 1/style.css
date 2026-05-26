@@ -16,7 +16,7 @@
 
 
 .header-container{
-    flex: 1;
+    flex: 0 0 15%;
     background: linear-gradient(to right, #a2b0ff, #6D66C7, #754BA3);
     display: flex;
     align-items: center;
@@ -33,7 +33,7 @@
 /* --------------------------- */
 .main-container{
     display: flex;
-    flex:20;
+    flex:1;
     background-color: #f30000;
 }
 .main-content-container{
@@ -41,9 +41,32 @@
 }
 
 .nav-container{
-    background-color: blue;
+    flex: 0 0 10%;
+    background-color: #F8F9FA;
+    padding: 1em 0 0 1em;
 }
+
+.nav-container h2{
+    margin-bottom: 0.4em;
+    margin-left: -0.2em;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35em;
+}
+
+.nav-list a{
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #5A6167;
+}
+
 .sidebar-container{
+    flex: 0 0 10%;
     background-color: #2bff00;
 }
 
@@ -52,7 +75,7 @@
 /* ----------------------------- */
 
 .footer-container{
-    flex: 1;
+    flex: 0 0 15%;
     background-color: #343A40;
     display: flex;
     flex-direction: column;
@@ -67,6 +90,8 @@
     justify-content: center;
     
 }
+
+
 .footer-info-container a{
     white-space: nowrap;
     text-decoration: none;
