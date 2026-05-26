@@ -1,0 +1,21 @@
+
+.flex-container{
+    display: flex;
+}
+.bars-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.content-container{
+    border: 2px solid pink;
+    flex: 3;
+}
+
+.side-container{
+    flex:1
+}
+
+.bar{
+    background-color: pink;
+}
