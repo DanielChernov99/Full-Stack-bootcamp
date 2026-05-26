@@ -45,7 +45,7 @@
             border-radius: 4px;
             border: 2px solid #D2D8DA;
         }
-        .preference-cointainer select{
+        .preference-container select{
             margin: 10px;
         }
         .form-container #msg_box{
@@ -85,31 +85,31 @@
 <body>
     <h1>Contact Us</h1>
     <div class="form-container">
-        <form>
+        <form method="post">
             <fieldset class="personal-info-container">
                 <legend>Personal Information</legend>  
 
-                <label for="name">Name : </label>
+                <label for="name_input">Name : </label>
                 <input 
                     type="text" 
                     id="name_input" 
                     name="name" 
                     placeholder="Jon Doe"
-                ><br><br>
+                >
 
-                <label for="email">Email : </label>
-                <input type="text" 
+                <label for="email_input">Email : </label>
+                <input type="email" 
                     id="email_input" 
                     name="email" 
                     placeholder="Jon@gmail.com"
-                ><br><br>
+                >
                 
                 <label for="phone">Phone : </label>
-                <input type="text" 
+                <input type="tel" 
                     id="phone_input" 
                     name="phone" 
                     placeholder="05412345678"
-                ><br><br>
+                >
 
             </fieldset>
             <fieldset class="message-container">
@@ -120,7 +120,7 @@
                     <option value="sales">Sales</option>
                     <option value="career">Career</option>
                     <option value="donate">Donate</option>
-                </select><br>
+                </select>
                 
                 
                 <p>Priority: </p>
@@ -134,7 +134,7 @@
                 <label for="high_radio">High</label>
 
                 
-                <label for="msg_box">Message</label><br>
+                <label for="msg_box">Message</label>
                 <textarea 
                     id="msg_box"
                     name="msg_box"
@@ -144,19 +144,19 @@
                 ></textarea>
 
             </fieldset>
-            <fieldset class="preference-cointainer">
+            <fieldset class="preference-container">
                 <legend>Preference</legend>
-                <input type="checkbox" name="subscribe">
-                <label for="subscribe">Subscribe to newsletter</label><br>
+                <input id="subscribe" type="checkbox" name="subscribe">
+                <label for="subscribe">Subscribe to newsletter</label>
 
                 <label for="contact_Method">Contact Method: </label>
                 <select name="contact_Method">
                     <option value="sales">Email</option>
                     <option value="career">Fax</option>
-                </select><br>
-            </fieldset><br>
-            <button id="btnSendMessage" type="button">Send Message</button>
-            <button id="btnReset" type="button">Reset</button>
+                </select>
+            </fieldset>
+            <button id="btnSendMessage" type="submit">Send Message</button>
+            <button id="btnReset" type="reset">Reset</button>
 
         </form>
     </div>
