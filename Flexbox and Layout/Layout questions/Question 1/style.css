@@ -15,7 +15,8 @@
 
 
 .header-container{
-    background-color: rgb(229, 255, 0);
+    flex: 1;
+    background-color: #6A6FD6;
 }
 
 /* --------------------------- */
@@ -23,7 +24,7 @@
 /* --------------------------- */
 .main-container{
     display: flex;
-    flex:1;
+    flex:20;
     background-color: #f30000;
 }
 .main-content-container{
@@ -42,7 +43,8 @@
 /* ----------------------------- */
 
 .footer-container{
-    background-color: #6c00fa;
+    flex: 2;
+    background-color: #343A40;
 }
 
 
