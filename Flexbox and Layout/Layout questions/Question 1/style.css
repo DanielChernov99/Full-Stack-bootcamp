@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 .site-container {
@@ -43,8 +44,26 @@
 /* ----------------------------- */
 
 .footer-container{
-    flex: 2;
+    flex: 1;
     background-color: #343A40;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.footer-info-container{
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    
+}
+.footer-info-container a{
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 1em;
+    color: #5A6167;
 }
 
 
