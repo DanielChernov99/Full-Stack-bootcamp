@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Segoe UI",sans-serif;
 }
 
 .site-container {
@@ -17,7 +17,15 @@
 
 .header-container{
     flex: 1;
-    background: linear-gradient(to right, #677BE6, #6D66C7, #754BA3);
+    background: linear-gradient(to right, #a2b0ff, #6D66C7, #754BA3);
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+}
+
+.header-container h1{
+    font-weight: 600;
+    color: white;
 }
 
 /* --------------------------- */
