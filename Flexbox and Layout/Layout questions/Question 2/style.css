@@ -29,30 +29,26 @@ body{
     flex: 1;
 }
 
+.right-nav,
 .left-nav{
     display: flex;
     gap: 1em;
     padding: 1em;
     list-style: none;
 }
-
-.left-nav a{
+.nav-link{
     text-decoration: none;
     color: white;
     font-size: 1.2em;
+    padding: 1em 1em;
+    border-radius: 10px;
+
 }
 
-.right-nav{
-    display: flex;
-    gap: 1em;
-    padding: 1em;
-    list-style: none;
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.18);
 }
-.right-nav a{
-    text-decoration: none;
-    color: white;
-    font-size: 1.2em;
-}
+
 
 
 /* -------------------- */
