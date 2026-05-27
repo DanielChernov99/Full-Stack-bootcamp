@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-image: url('https://t3.ftcdn.net/jpg/00/49/42/22/360_F_49422257_lJqY9NxFVhzmXd2qLEzzXwcmKnzKPRt0.jpg');
+    background-size: cover;
+    background-position: center;
+}
 
 .gallery-container{
     width: 60%;
@@ -25,6 +30,9 @@ img{
 }
 .photo-container a{
     position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 20px;
 
 }
     
