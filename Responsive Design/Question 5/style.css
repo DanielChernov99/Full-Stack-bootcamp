@@ -18,7 +18,8 @@ body{
 
 .product-card-container{
     width: 80%;
-    margin: 1em auto;
+    margin: 0.8em auto;
+    max-width: 1200px;
     background-color: #fff;
 
     display: flex;
@@ -99,6 +100,7 @@ body{
 
 @media(min-width: 900px){
     .product-card-container{
+        margin: 5em auto;
         flex-direction: row;
         gap: 3em;
         padding: 3em;
@@ -108,11 +110,16 @@ body{
 
 @media(max-width:600px){
     .product-info-container{
+        margin: 1em auto;
         padding: 1em;
         justify-content: center;
         align-items: center;
     }
     .product-card-container{
         padding: 1em;
+    }
+    .product-bottom-row{
+        flex-direction: column;
+        gap: 1em;
     }
 }
