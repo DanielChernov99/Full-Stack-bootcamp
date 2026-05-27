@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+}
+
+Desktop (>900px): Heading 48px, Paragraph 18px
+Tablet (600px-900px): Heading 36px, Paragraph 16px
+Mobile (<600px): Heading 24px, Paragraph 14px
+
+.content-container h1{
+    font-size:48px;
+}
+.content-container p{
+    font-size:14px;
+}
+
+@media (min-width: 600px) and (max-width: 900px){
+    .content-container h1{
+    font-size:36px;
+    }
+    .content-container p{
+        font-size:16px;
+    }
+}
+@media (min-width: 900px) {
+    .content-container h1{
+    font-size:48px;
+    }
+    .content-container p{
+        font-size:18px;
+    }
+}
