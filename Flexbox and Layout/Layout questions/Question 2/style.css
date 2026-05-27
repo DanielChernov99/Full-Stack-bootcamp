@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI",sans-serif;
+}
+
+body{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+.header-container{
+    background: linear-gradient(to right, #a2b0ff, #6D66C7, #754BA3);
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+}
