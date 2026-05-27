@@ -17,3 +17,34 @@ body{
     align-items: center;
     padding-left: 1em;
 }
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.left-nav{
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+    list-style: none;
+}
+
+.left-nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+.right-nav{
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+    list-style: none;
+}
+.right-nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
