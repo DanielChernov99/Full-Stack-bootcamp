@@ -34,10 +34,30 @@
 .main-container{
     display: flex;
     flex:1;
-    background-color: #f30000;
+    background-color: white;
 }
 .main-content-container{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
     flex: 1;
+}
+.main-content-container h2 {
+    color: #343A40;
+    margin-bottom: 1em;
+}
+
+.main-content-container p {
+    line-height: 1.6;
+}
+
+.feature-card{
+    background-color: #e6e7e7;
+    border-radius: 10px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
 }
 
 .nav-container{
