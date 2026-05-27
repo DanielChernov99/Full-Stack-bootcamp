@@ -5,9 +5,10 @@
 }
 
 .gallery-container{
+    width: 60%;
+    margin: 2% auto;
     display: flex;
     flex-wrap: wrap;
-    margin: 1em;
 }
 
 img{
@@ -32,7 +33,8 @@ img{
     position: absolute;
     bottom: 0;
     left: 0;
-    
+    color: rgba(114, 114, 114, 0.8);
+    font-size: 1rem;   
 }
 
 
@@ -42,11 +44,17 @@ img{
     .photo-container{
         width: 50%;
     }
+    .photo-text{
+        font-size: 1.2rem;   
+    }
 }
 
 /* desktop 901px and above */
 @media (min-width: 901px) {
     .photo-container{
         width: 33.33%;
+    }
+    .photo-text{
+        font-size: 1.4rem;   
     }
 }
