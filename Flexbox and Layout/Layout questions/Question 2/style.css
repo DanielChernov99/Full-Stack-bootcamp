@@ -60,9 +60,28 @@ body{
 /* ------------------ --*/
 
 
-.main-content{
+.main-container{
+    background-color: #d6d6d6;
     display: flex;
     flex: 1;
     gap: 1em;
     padding: 1em;
+    align-items: start;
+    justify-content: center;
+}
+
+.main-card{
+    background-color: white;
+    padding: 1em;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.main-card p{
+    line-height: 1.5;
+    text-align: center;
 }
