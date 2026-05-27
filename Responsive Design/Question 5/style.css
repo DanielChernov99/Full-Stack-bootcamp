@@ -3,3 +3,56 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+img{
+    width: 400px;
+    height: 400px;
+}
+
+body{
+    background-color: #6f9fff;
+}
+
+.product-card-container{
+    width: 80%;
+    margin: 2em auto;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* i took insperation from apple round corners, because its not exactly just round corners */
+/* found cool stuff online,just wanted to experiment with the style */
+.product-card-container,
+.product-info-container {
+    border-radius: 28px; 
+    background: white;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+.product-info-container {
+    background-color: #D1D1D6;
+}
+
+.product-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 999px;
+
+  background: #007aff;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.product-price {
+  color: #ff3b30; 
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
