@@ -19,13 +19,19 @@ body{
 .header-container{
     background: linear-gradient(to right, #a2b0ff, #6D66C7, #754BA3);
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    min-height: 60px;
+}
+
+.nav-container,
+.left-nav,
+.right-nav{
+    align-items: stretch;
 }
 
 .nav-container{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex: 1;
     height: 100%;
     padding: 0 1em;
@@ -44,8 +50,13 @@ body{
     color: white;
     font-size: 1.2em;
     padding: 0 1em;
-    border-radius: 10px;
-    
+    border-radius: 10px;  
+}
+
+.left-nav li,
+.right-nav li{
+    display: flex;
+    align-items: center;
 }
 
 
