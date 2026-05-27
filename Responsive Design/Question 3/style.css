@@ -12,5 +12,25 @@
 
 img{
     width:100%;
-    height: auto;
+    height: 100px;
+}
+
+.photo-container{
+    width: 100%;
+}
+
+
+
+/* Tablet 601px - 900px */
+@media (min-width: 601px) {
+    .photo-container{
+        width: calc(50% - 2px);
+    }
+}
+
+/* desktop 901px and above */
+@media (min-width: 901px) {
+    .photo-container{
+        width: calc(33.33% - 2px);
+    }
 }
