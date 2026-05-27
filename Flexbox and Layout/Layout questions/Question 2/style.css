@@ -11,6 +11,11 @@ body{
     flex-direction: column;
 
 }
+
+
+/* ------------------ */
+/* ------Header------ */
+/* ------------------ */
 .header-container{
     background: linear-gradient(to right, #a2b0ff, #6D66C7, #754BA3);
     display: flex;
@@ -47,4 +52,17 @@ body{
     text-decoration: none;
     color: white;
     font-size: 1.2em;
+}
+
+
+/* -------------------- */
+/* ----Main Content---- */
+/* ------------------ --*/
+
+
+.main-content{
+    display: flex;
+    flex: 1;
+    gap: 1em;
+    padding: 1em;
 }
