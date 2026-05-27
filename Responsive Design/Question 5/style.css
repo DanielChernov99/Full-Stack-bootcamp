@@ -11,6 +11,7 @@ img{
 
 body{
     background-color: #6f9fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .product-card-container{
@@ -23,6 +24,13 @@ body{
     justify-content: center;
     align-items: center;
 
+
+}
+.product-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
 }
 
 /* i took insperation from apple round corners, because its not exactly just round corners */
@@ -34,7 +42,8 @@ body{
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 .product-info-container {
-    background-color: #D1D1D6;
+    background-color: #f5f5f7;
+    padding: 2em;
 }
 
 .product-button {
@@ -55,4 +64,19 @@ body{
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.5px;
+}
+.product-title {
+  color: #1d1d1f;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.product-description {
+  color: #6e6e73;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
 }
