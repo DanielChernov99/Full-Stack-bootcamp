@@ -259,5 +259,37 @@ let q3Array = users.filter(u => u.address.zipcode[0] === "5").map(u => u.id)
 
 let q4Array = users.map(u => u.name).filter(u => u.startsWith("C"))
 
-console.log(q4Array)
+// console.log(q4Array)
 
+
+
+// ---------------q5-----------------
+
+let isAllLiveInSouthChristy = users.every(u => u.address.city ==="South Christy")
+
+// console.log(isAllLiveInSouthChristy)
+
+// ---------------q6-----------------
+
+
+
+let userSuiteApt950 = users.find(u => u.address.suite === "Apt. 950")
+// for testing
+// let userSuiteApt950 = users.find(u => u.address.suite === "Apt. 111")
+
+
+// console.log(userSuiteApt950?.company?.name ?? "no such user")
+
+
+
+
+
+
+
+// ---------------q7-----------------
+
+const printFullDetails = user => {
+  return `${user.name} lives in ${user.address.city} and own the company ${user.company.name}`
+}
+
+users.forEach(u => console.log(printFullDetails(u)+`\n`))
