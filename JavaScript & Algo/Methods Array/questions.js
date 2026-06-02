@@ -253,3 +253,11 @@ let q2Array = users.filter(u => u.address.zipcode[0] === "5")
 let q3Array = users.filter(u => u.address.zipcode[0] === "5").map(u => u.id)
 
 // console.log(q3Array)
+
+
+// ---------------q4-----------------
+
+let q4Array = users.map(u => u.name).filter(u => u.startsWith("C"))
+
+console.log(q4Array)
+
