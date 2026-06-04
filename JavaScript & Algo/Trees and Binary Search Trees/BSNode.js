@@ -1,0 +1,40 @@
+class BSNode {
+    constructor(value) {
+        this.value = value;
+        this.leftChild = null;
+        this.rightChild = null;
+    }
+    insertNode(newVal) {
+        if (!this.value) {
+            this.value = newVal
+        }
+        else if (newVal > this.value && this.rightChild) {
+            this.rightChild.insertNode(newVal)
+        }
+        else if(newVal <= this.value && this.leftChild) {
+            this.leftChild.insertNode(newVal)
+        }
+        else if (newVal <= this.value) {
+            this.leftChild = new BSNode(newVal)
+        }
+        else {
+            this.rightChild = new BSNode(newVal)
+        }
+    }
+    findNode = function(val){
+    if (this.value == val){
+        console.log("true");       
+        return true;
+    }
+    else if (val > this.value && this.rightChild){
+        return this.rightChild.findNode(val)
+    }
+    else if(val <= this.value && this.leftChild){
+        return this.leftChild.findNode(val)
+    }
+    console.log("false"); 
+    return false;
+    }
+}
+
+module.exports = BSNode
