@@ -1,7 +1,12 @@
 
-class BankAccount{
+export default class BankAccount{
     constructor(balance = 0) {
-    this.balance = balance;
+        if (balance < 0 || Number.isNaN(balance)){
+            this.balance = 0
+        }
+        else{
+            this.balance = balance;
+        }
     }
 
     checkBalance(){
@@ -9,6 +14,7 @@ class BankAccount{
     }
 
     depositMoney(amount){
+        amount = Number(amount)
         if(Number.isNaN(amount) || (amount <= 0 )){
             return false;
         }
@@ -16,6 +22,7 @@ class BankAccount{
         return true;
     }
     withdrawMoney(amount){
+        amount = Number(amount)
         if(Number.isNaN(amount) || (amount <= 0 )){
             return false;
         }
