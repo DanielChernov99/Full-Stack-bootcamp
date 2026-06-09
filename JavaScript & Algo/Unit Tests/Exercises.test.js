@@ -1,1 +1,0 @@
-const Exercises = require("./Exercises")

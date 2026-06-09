@@ -5,3 +5,6 @@ class Exercises  {
     }
 
 }
+
+
+module.exports = Exercises
