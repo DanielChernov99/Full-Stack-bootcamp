@@ -57,6 +57,18 @@ function processPayment(amount) {
   // 2. 90% success rate
   // 3. Resolves with { transactionId, amount, status: 'success' }
   // 4. Rejects with payment failure error
+  return new Promise((resolve,reject) =>{
+    setTimeout(() => {
+        const random = Math.random();
+        if(random < 0.9){
+            const transactionId = `TX-${Date.now()}`
+            resolve({transactionId,amount,status:"success"})
+        }
+        else{
+            reject(new Error("Payment didnt worked,sorry"))
+        }
+    },1500)
+  })
 }
 
 function updateInventory(items) {
