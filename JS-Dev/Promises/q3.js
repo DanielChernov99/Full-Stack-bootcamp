@@ -42,7 +42,7 @@ function calculateTotal(items) {
         setTimeout(() => {
             const taxRate = 0.08
             let subtotal = items.reduce((sum, item) =>{
-                return sum += inventory[item].price
+                return sum + inventory[item].price
             },0)
             const tax = subtotal * taxRate
             const total = subtotal + tax
@@ -76,6 +76,15 @@ function updateInventory(items) {
   // 1. Waits 300ms
   // 2. Reduces stock for each item
   // 3. Resolves with updated inventory status
+  return new Promise((resolve, reject) => {
+    setTimeout(() =>{
+        items.forEach(item => {
+            inventory[item].stock --
+        })
+        resolve(inventory)
+
+    },300)
+  })
 }
 
 // TODO: Create a complete checkout function that:
@@ -86,6 +95,37 @@ function updateInventory(items) {
 
 function checkout(itemNames) {
   // TODO: Implement the complete checkout flow
+    let checkedItems
+    let totalDetails
+    let paymentDetails
+    return checkInventory(itemNames)
+        .then((items) =>{
+            checkedItems = items
+            return items
+        })
+        .then(items => {
+            return calculateTotal(items)
+        })
+        .then(total => {
+            totalDetails = total 
+            return processPayment(total.total)
+        })
+        .then(afterProcces => {
+            paymentDetails = afterProcces
+            return updateInventory(checkedItems)
+        })
+        .then(updatedInventory => {
+            return {
+                items : checkedItems,
+                total : totalDetails,
+                payment: paymentDetails,
+                inventory: updatedInventory
+            }
+        })
+        .catch(error => {
+            throw new Error(`Checkout failed - ${error.message}`);
+            
+        })             
 }
 
 // Test cases:
