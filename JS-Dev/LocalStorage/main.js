@@ -9,27 +9,34 @@ const createDeleteButton = function () {
     return deleteButton
 }
 
-let wisdom = []
+let wisdoms = []
 
 const renderWisdom = function(){
+    wisdoms.forEach(wisdom => {
+        const newWisdomElement = document.createElement("p")
+        const wisdomText = document.createElement("span")
+        wisdomText.textContent = wisdom.value
 
+        const deleteButton = createDeleteButton()
+
+        newWisdomElement.append(wisdomText, deleteButton)
+        wisdomContainer.appendChild(newWisdomElement)  
+        deleteButton.addEventListener("click", () => {
+            newWisdomElement.remove()
+            renderWisdom();
+        })   
+    });
 }
 
 btnWisdom.addEventListener("click",() =>{
     const inputValue = inputWisdom.value
-    const newWisdomElement = document.createElement("p")
-
-    const wisdomText = document.createElement("span")
-    wisdomText.textContent = inputValue
-
-    const deleteButton = createDeleteButton()
-
-    newWisdomElement.append(wisdomText, deleteButton)
-    wisdomContainer.appendChild(newWisdomElement)
-
-    deleteButton.addEventListener("click", () => {
-        console.log("delete clicked")
-    })   
+    const wisdomItem = {
+        id:Date.now(),
+        value: inputValue
+    }
+    wisdoms.push(wisdomItem)
+    renderWisdom()
+       
 })
 
 
