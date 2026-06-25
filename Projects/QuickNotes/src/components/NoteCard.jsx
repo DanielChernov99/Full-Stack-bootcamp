@@ -1,3 +1,4 @@
+import "../styles/NoteCard.css";
 
 export default function NoteCard({note}){
     const dateOfNote= note.date

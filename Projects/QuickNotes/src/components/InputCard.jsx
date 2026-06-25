@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "../styles/InputCard.css";
 
 export default function InputCard({addNote}){
 

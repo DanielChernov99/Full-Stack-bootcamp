@@ -1,9 +1,12 @@
+import NoteCard from "./NoteCard";
+import "../styles/NoteList.css";
 
-import NoteCard from "./NoteCard"
-
-export default function NoteList({notes}){
-    
-    return (
-        notes.map(n => <NoteCard key={n.id} note = {n} />)
-    )
+export default function NoteList({ notes }) {
+  return (
+    <div className="note-list">
+      {notes.map((n) => (
+        <NoteCard key={n.id} note={n} />
+      ))}
+    </div>
+  );
 }
