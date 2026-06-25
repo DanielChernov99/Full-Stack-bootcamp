@@ -26,3 +26,28 @@
   color: #555;
   text-align: right;
 }
+
+.note-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-button {
+  width: 16px;
+  height: 16px;
+
+  border: none;
+  background: none;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.x-icon {
+  font-size: 16px;
+}

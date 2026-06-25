@@ -16,11 +16,17 @@ function App() {
     }
     setNotes(prevNotes => [...prevNotes,newNote])
   }
+
+  const deleteNote = (noteToDelete) => {
+    const newNotes = notes.filter((u) => u.id !== noteToDelete.id);
+    setNotes(newNotes);
+  };
+
   return (
     <div className="app">
       
       <InputCard addNote ={addNote} />
-      <NoteList notes={notes} />
+      <NoteList deleteNote={deleteNote} notes={notes} />
     </div>
   );
 }

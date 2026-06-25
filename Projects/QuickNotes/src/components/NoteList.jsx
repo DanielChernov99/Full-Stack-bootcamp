@@ -1,11 +1,11 @@
 import NoteCard from "./NoteCard";
 import "../styles/NoteList.css";
 
-export default function NoteList({ notes }) {
+export default function NoteList({ notes ,deleteNote}) {
   return (
     <div className="note-list">
       {notes.map((n) => (
-        <NoteCard key={n.id} note={n} />
+        <NoteCard key={n.id} note={n} deleteNote={deleteNote} />
       ))}
     </div>
   );
