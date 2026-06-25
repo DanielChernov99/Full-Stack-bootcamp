@@ -3,32 +3,34 @@ import "../styles/InputCard.css";
 
 export default function InputCard({addNote}){
 
-    const [areaText,setAreaText] = useState("")
-    const [titleText,setTitleText] = useState("")
+    const [formData,setFormData] = useState({
+        title:"",
+        text:""
+    })
 
     const handleAddClick = ()=> {
-        const noteValue = areaText
         addNote({
-            title: titleText,
-            text: areaText
+            title: formData.title,
+            text: formData.text
         });
-        setAreaText("")
-        setTitleText("")
+        setFormData({
+            title:"",
+            text:""
+        })
     }
-    const handleTextAreaChange = (e) => {
-        setAreaText(e.target.value)
+    const handleChange = (e) =>{
+        const {name,value} = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }))
     }
-    const handleTitleChange = (e) => {
-        setTitleText(e.target.value)
-    }
-         
-    
-
+       
     return (
         <div className="formContainer">
             <h1>QuickNotes</h1>
-            <input value={titleText} onChange={handleTitleChange} placeholder="Note Title" type="text" />
-            <textarea placeholder="Write your new idea here" value={areaText} className="inputText" onChange={handleTextAreaChange} ></textarea>
+            <input name="title" value={formData.title} onChange={handleChange} placeholder="Note Title" type="text" />
+            <textarea name="text" placeholder="Write your new idea here" value={formData.text} className="inputText" onChange={handleChange} ></textarea>
             <button onClick={handleAddClick} type="button">Add</button>
 
         </div>
