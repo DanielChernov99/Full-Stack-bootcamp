@@ -8,7 +8,13 @@ export default function NoteCard({deleteNote,note}){
     const time = dateOfNote.toLocaleTimeString()
     
     const handleDeleteClick = ()=>{
-        deleteNote(note)
+
+        let result = confirm("Are you sure you want to delete?");
+        if(result){
+            deleteNote(note)
+        }
+        
+        
     }
 
     return (
