@@ -7,8 +7,14 @@ import NoteList from "./components/NoteList"
 function App() {
   const [notes, setNotes] = useState([]);
 
-  const addNote = (newNote)=>{
-    setNotes([...notes,newNote])
+  const addNote = (newNoteText)=>{
+    if (!newNoteText.trim()) return
+    const newNote ={
+      id: crypto.randomUUID(),
+      text:newNoteText,
+      date: new Date()
+    }
+    setNotes(prevNotes => [...prevNotes,newNote])
   }
   return (
     <div className="app">

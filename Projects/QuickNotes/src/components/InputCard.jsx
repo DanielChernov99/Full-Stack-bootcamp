@@ -6,7 +6,7 @@ export default function InputCard({addNote}){
 
     const handleAddClick = ()=> {
         const noteValue = textInArea
-        addNote({text: noteValue})
+        addNote(noteValue)
         setTextInArea("")
     }
     const handleChange = (e) => {
@@ -18,7 +18,7 @@ export default function InputCard({addNote}){
     return (
         <div className="formContainer">
             <h1>QuickNotes</h1>
-            <textarea className="inputText" onChange={handleChange} name="inputTextArea" id="inputTextArea"></textarea>
+            <textarea value={textInArea} className="inputText" onChange={handleChange} id="inputTextArea"></textarea>
             <button onClick={handleAddClick} type="button">Add</button>
 
         </div>
