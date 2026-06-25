@@ -6,7 +6,8 @@ export default function InputCard({addNote}){
 
     const handleAddClick = ()=> {
         const noteValue = textInArea
-        addNote()
+        addNote({text: noteValue})
+        setTextInArea("")
     }
     const handleChange = (e) => {
         setTextInArea(e.target.value)
