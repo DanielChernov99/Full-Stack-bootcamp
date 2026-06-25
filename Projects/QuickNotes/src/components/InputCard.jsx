@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "../styles/InputCard.css";
 
-export default function InputCard({addNote}){
+export default function InputCard({onAddNote}){
 
     const [formData,setFormData] = useState({
         title:"",
@@ -9,7 +9,7 @@ export default function InputCard({addNote}){
     })
 
     const handleAddClick = ()=> {
-        addNote({
+        onAddNote({
             title: formData.title,
             text: formData.text
         });

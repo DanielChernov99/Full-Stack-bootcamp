@@ -29,8 +29,8 @@ function App() {
   return (
     <div className="app">
       
-      <InputCard addNote ={addNote} />
-      <NoteList deleteNote={deleteNote} notes={notes} />
+      <InputCard onAddNote ={addNote} />
+      <NoteList onDeleteNote={deleteNote} notes={notes} />
     </div>
   );
 }

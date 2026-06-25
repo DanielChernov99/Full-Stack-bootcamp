@@ -1,7 +1,7 @@
 import "../styles/NoteCard.css";
 import { LuX } from "react-icons/lu";
 
-export default function NoteCard({deleteNote,note}){
+export default function NoteCard({onDeleteNote,note}){
     const dateOfNote= note.date
     const day = dateOfNote.getDate();
     const month = dateOfNote.toLocaleString("en-US", { month: "short" });
@@ -11,7 +11,7 @@ export default function NoteCard({deleteNote,note}){
 
         let result = confirm("Are you sure you want to delete your note?");
         if(result){
-            deleteNote(note)
+            onDeleteNote(note)
         }
         
         
