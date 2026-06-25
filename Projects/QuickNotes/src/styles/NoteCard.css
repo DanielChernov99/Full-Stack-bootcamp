@@ -4,7 +4,8 @@
   background-color: #fff7a8;
 
   padding: 15px;
-  border-radius: 6px;
+  border-radius: 12px;
+  corner-shape: squircle;
 
   display: flex;
   flex-direction: column;
