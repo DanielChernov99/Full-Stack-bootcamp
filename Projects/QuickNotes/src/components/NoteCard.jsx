@@ -9,7 +9,7 @@ export default function NoteCard({deleteNote,note}){
     
     const handleDeleteClick = ()=>{
 
-        let result = confirm("Are you sure you want to delete?");
+        let result = confirm("Are you sure you want to delete your note?");
         if(result){
             deleteNote(note)
         }
