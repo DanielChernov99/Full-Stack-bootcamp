@@ -33,10 +33,12 @@ export default function NoteCard({onNoteClick,onDeleteNote,note,shouldConfirmDel
     const handleNoteClick = ()=>{
         onNoteClick(note)
     }
+    const categoryClass = `category-${note.category ?? "personal"}`;
 
     return (
-        <div className="note-container" onClick={handleNoteClick}>
+        <div className={`note-container ${categoryClass}`} onClick={handleNoteClick}>
             {note.title? <h3>{note.title}</h3>:""}
+            
             <p className="note-text">{note.text}</p>
             <div className="note-info-row">          
                 <div>

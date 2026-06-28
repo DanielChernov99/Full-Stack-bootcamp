@@ -9,6 +9,13 @@ import EditNoteForm from "./components/EditNoteForm";
 function App() {
   const [notes, setNotes] = useState(loadFromLocaleStorage);
   const [activeNote, setActiveNote] = useState(null);
+
+  const CATEGORIES = [
+    { value: "personal", label: "Personal" },
+    { value: "work", label: "Work" },
+    { value: "study", label: "Study" },
+    { value: "other", label: "Other" },
+  ];
   
 
   function  loadFromLocaleStorage(){
@@ -39,6 +46,7 @@ function App() {
       id: crypto.randomUUID(),
       title:noteData.title,
       text:noteData.text,
+      category: noteData.category  || "personal ",
       date: new Date()
     }
     const newNotes = [...notes, newNote];
@@ -62,6 +70,7 @@ function App() {
             ...note,
             title: noteToUpdate.title,
             text: noteToUpdate.text,
+            category: noteToUpdate.category || "personal",
             updatedAt: new Date()
           }
         : note
@@ -82,8 +91,8 @@ saveNotes(newNotes);
 
   return (
     <div className="app">
-      <InputCard onAddNote ={addNote} />
-      <NoteList onDeleteNote={deleteNote} notes={notes} onNoteClick={handleNoteClick} />
+      <InputCard onAddNote ={addNote} categories={CATEGORIES} />
+      <NoteList onDeleteNote={deleteNote} notes={notes} onNoteClick={handleNoteClick} categories={CATEGORIES} />
       <Modal
         opened={activeNote !== null}
         onClose={closeModal}
@@ -95,6 +104,7 @@ saveNotes(newNotes);
           <EditNoteForm
             note={activeNote}
             onUpdateNote={updateNote}
+            categories={CATEGORIES}
           />
         )}
       </Modal>

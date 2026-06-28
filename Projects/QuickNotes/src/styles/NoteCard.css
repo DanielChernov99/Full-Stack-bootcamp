@@ -59,3 +59,19 @@
 .x-icon {
   font-size: 16px;
 }
+
+.category-personal {
+  background-color: #fff3cd;
+}
+
+.category-work {
+  background-color: #d1ecf1;
+}
+
+.category-study {
+  background-color: #d4edda;
+}
+
+.category-other {
+  background-color: #eadcf8;
+}
