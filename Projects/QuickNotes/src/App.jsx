@@ -7,9 +7,28 @@ import EditNoteForm from "./components/EditNoteForm";
 
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(loadFromLocaleStorage);
   const [activeNote, setActiveNote] = useState(null);
   
+
+  function  loadFromLocaleStorage(){
+    try {
+      const savedNotes = localStorage.getItem("Notes")
+      if(!savedNotes){
+        return []
+      }
+      return JSON.parse(savedNotes)
+      
+    } catch (error) {
+        alert("something went wrong loading from Locale Storage")
+        return []
+    }
+  }
+  const saveNotes = (newNotes) => {
+    setNotes(newNotes);
+    localStorage.setItem("Notes", JSON.stringify(newNotes));
+  };
+
 
   const addNote = (noteData)=>{
     if (!noteData.text.trim()) {
@@ -22,12 +41,13 @@ function App() {
       text:noteData.text,
       date: new Date()
     }
-    setNotes(prevNotes => [...prevNotes,newNote])
+    const newNotes = [...notes, newNote];
+    saveNotes(newNotes);
   }
 
   const deleteNote = (noteToDelete) => {
     const newNotes = notes.filter((u) => u.id !== noteToDelete.id);
-    setNotes(newNotes);
+    saveNotes(newNotes);
   };
 
   const updateNote = (noteToUpdate) => {
@@ -36,18 +56,18 @@ function App() {
       return;
     }
 
-    setNotes((prevNotes) =>
-      prevNotes.map((note) =>
-        note.id === noteToUpdate.id
-          ? {
-              ...note,
-              title: noteToUpdate.title,
-              text: noteToUpdate.text,
-              updatedAt: new Date()
-            }
-          : note
-      )
+    const newNotes = notes.map((note) =>
+      note.id === noteToUpdate.id
+        ? {
+            ...note,
+            title: noteToUpdate.title,
+            text: noteToUpdate.text,
+            updatedAt: new Date()
+          }
+        : note
     );
+
+saveNotes(newNotes);
 
     setActiveNote(null);
   };
