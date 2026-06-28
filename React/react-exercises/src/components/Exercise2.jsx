@@ -35,11 +35,17 @@ export default function Exercise2(){
         
     )
 
+    const displayConvo = (name) => {
+        setData((prev) => ({...prev,displayConversation: name}))
+
+    } 
+
     return (
         <div className="container">
             {data.displayConversation === null ?
             <List
-            contacts={data.conversations.map(u => u.with)}                                              
+            contacts={data.conversations.map(u => u.with)}
+            displayConvo={displayConvo}                                                      
             />
             :
             <Conversation/>
