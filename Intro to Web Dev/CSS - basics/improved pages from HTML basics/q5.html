@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q5 exercise</title>
+    <style>
+        body{
+            background-color: #ECF0F1;
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        h1{
+            text-align: center;
+            color: #2980B9;
+            padding: 10px;
+            font-size: 42px;
+            margin-bottom: 5px;
+        }
+
+        .form-container{
+            width: 55%;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            border-radius: 10px;  
+            padding: 20px;       
+        }
+
+        .form-container fieldset{
+            background-color: #ECF0F1;
+            border: 2px solid #3F9DDD;
+            border-radius: 8px;
+            color: #3B4F63;
+            font-weight: bolder;
+            padding: 25px 18px;
+            margin: 20px 10px 30px;
+        }
+
+        .form-container legend{
+            background-color: white;
+            color: #2980B9;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        .form-row{
+            margin-bottom: 20px;
+        }
+
+        .form-container input{
+            border-radius: 4px;
+            border: 2px solid #D2D8DA;
+            padding: 5px;
+        }
+
+        .form-container select{
+            border-radius: 4px;
+            border: 2px solid #D2D8DA;
+            padding: 5px 2px;
+        }
+
+        .form-container #msg_box{
+            font-size: 20px;
+        }
+
+        .form-container input[type="radio"]{
+            width: 14px;
+            height: 14px;
+            accent-color: #033cf8;
+        }
+
+        button{
+            border-radius: 5px;
+            border: none;
+            padding: 14px 28px;
+            color: #F4FAF6;
+            margin: 0 10px 20px 40px;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+
+        #btnSendMessage{
+            background-color: #25AF60;
+        }
+
+        #btnReset{
+            background-color: #E74B3C;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Us</h1>
+
+    <div class="form-container">
+        <form method="post">
+
+            <fieldset class="personal-info-container">
+                <legend>Personal Information</legend>  
+
+                <div class="form-row">
+                    <label for="name_input">Name:</label>
+                    <input 
+                        type="text" 
+                        id="name_input" 
+                        name="name" 
+                        placeholder="Jon Doe"
+                    >
+                </div>
+
+                <div class="form-row">
+                    <label for="email_input">Email:</label>
+                    <input 
+                        type="email" 
+                        id="email_input" 
+                        name="email" 
+                        placeholder="Jon@gmail.com"
+                    >
+                </div>
+
+                <div class="form-row">
+                    <label for="phone_input">Phone:</label>
+                    <input 
+                        type="tel" 
+                        id="phone_input" 
+                        name="phone" 
+                        placeholder="05412345678"
+                    >
+                </div>
+            </fieldset>
+
+            <fieldset class="message-container">
+                <legend>Message Details</legend>
+
+                <div class="form-row">
+                    <label for="subjects">Subject:</label>
+                    <select id="subjects" name="subjects">
+                        <option value="sales">Sales</option>
+                        <option value="career">Career</option>
+                        <option value="donate">Donate</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <p>Priority:</p>
+
+                    <input id="low_radio" type="radio" name="priority" value="low">
+                    <label for="low_radio">Low</label>
+
+                    <input id="medium_radio" type="radio" name="priority" value="medium">
+                    <label for="medium_radio">Medium</label>
+
+                    <input id="high_radio" type="radio" name="priority" value="high">
+                    <label for="high_radio">High</label>
+                </div>
+
+                <div class="form-row">
+                    <label for="msg_box">Message:</label>
+                    <textarea 
+                        id="msg_box"
+                        name="msg_box"
+                        rows="5"
+                        cols="45"
+                        placeholder="Your message..."
+                    ></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset class="preference-container">
+                <legend>Preference</legend>
+
+                <div class="form-row">
+                    <input id="subscribe" type="checkbox" name="subscribe">
+                    <label for="subscribe">Subscribe to newsletter</label>
+                </div>
+
+                <div class="form-row">
+                    <label for="contact_method">Contact Method:</label>
+                    <select id="contact_method" name="contact_method">
+                        <option value="email">Email</option>
+                        <option value="fax">Fax</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <button id="btnSendMessage" type="submit">Send Message</button>
+            <button id="btnReset" type="reset">Reset</button>
+
+        </form>
+    </div>
+</body>
+</html>

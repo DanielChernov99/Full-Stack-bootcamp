@@ -1,0 +1,25 @@
+
+.not-even-container,
+.even-container{
+    display: flex;
+    margin-bottom: 2%;
+}
+
+.box-container{
+    flex:1;
+
+}
+
+.box-content{
+    background-color: cadetblue;
+    padding: 50px 0;
+    margin: 5px;
+}
+
+.not-even-container > .box-container{
+    flex:2;
+}
+
+.not-even-container > .box-container:first-child{
+    flex:1;
+}

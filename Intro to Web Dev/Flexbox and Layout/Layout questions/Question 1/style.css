@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI",sans-serif;
+}
+
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* --------------------------- */
+/* Header (TOP) related stuff */
+/* --------------------------- */
+
+
+.header-container{
+
+    background: linear-gradient(to right, #a2b0ff, #6D66C7, #754BA3);
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+}
+
+.header-container h1{
+    font-weight: 600;
+    color: white;
+}
+
+/* --------------------------- */
+/* Main (MIDDLE) related stuff */
+/* --------------------------- */
+.main-container{
+    display: flex;
+    flex:1;
+    background-color: white;
+}
+.main-content-container{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    flex: 1;
+    min-width: 0;
+}
+.main-content-container h2 {
+    color: #343A40;
+    margin-bottom: 1em;
+}
+
+.main-content-container p {
+    line-height: 1.6;
+}
+
+.feature-card{
+    background-color: #e6e7e7;
+    border-radius: 10px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.nav-container{
+    flex: 0 0 10%;
+    background-color: #F8F9FA;
+    padding: 1em 0 0 1em;
+}
+
+.nav-container h2{
+    margin-bottom: 0.4em;
+    margin-left: -0.2em;
+    color: #5a5c5e
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35em;
+}
+
+.nav-list a{
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #5A6167;
+}
+
+.sidebar-container{
+    flex: 0 0 10%;
+    background-color: #e6e7e7;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 1em;
+    
+}
+.sidebar-container .sidebar-card{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1em;
+}
+.sidebar-container h3{
+    color: #5a5c5e;
+}
+
+/* ----------------------------- */
+/* footer (BOTTOM) related stuff */
+/* ----------------------------- */
+
+.footer-container{
+    background-color: #343A40;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.footer-info-container{
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    
+}
+
+
+.footer-info-container a{
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 1em;
+    color: #5A6167;
+}
+
+
+.nav-container,
+.sidebar-container,
+.main-content-container {
+    overflow-wrap: break-word;
+}

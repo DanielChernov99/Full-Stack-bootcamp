@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 4 - Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <form>
+      <div class="form-field">
+        <label for="nameInput">Name</label>
+        <input id="nameInput" type="text" placeholder="Shubert">
+      </div>
+
+      <div class="row">
+        <div class="form-field">
+          <label for="salaryInput">Desired Salary</label>
+          <input id="salaryInput" type="number" placeholder="12000">
+        </div>
+
+        <div class="form-field">
+          <label for="birthdayInput">Birthday</label>
+          <input id="birthdayInput" type="date">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="phoneInput">Phone</label>
+        <input id="phoneInput" type="tel" placeholder="0585216690">
+      </div>
+
+      <div id="errors"></div>
+
+      <button class="button" type="button">Submit</button>
+    </form>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

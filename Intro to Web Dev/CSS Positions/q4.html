@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q4 CSS Positions</title>
+    <style>
+        .red-background{
+            position: relative;
+            background-color: rgb(255, 46, 46);
+            width: 50%;
+            aspect-ratio: 1.7/1;
+            margin-inline: auto;
+            border-radius: 15px;
+            top: 30px;
+            
+        }
+        .silver-edges{
+            position: absolute;
+            background-color: #8f8e8e;
+            
+            width: 20%;
+            height: 30%;
+            top: -10px;
+        }
+        .white-space{
+            position: absolute;
+            background: white;
+            border-radius: 0px 0px 15px 15px ;
+            width: 60%;
+            top: 0;
+            left: 20%;
+            right: 20%;
+            height: 80%;
+        }
+        #edge-1{
+            border-radius: 15px 15px 0px 0px;
+            left: 0;
+        }
+        #edge-2{
+            border-radius: 15px 15px 0px 0px;
+            right: 0;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="red-background">
+        <div class="silver-edges" id="edge-1"></div>
+        <div class="silver-edges" id="edge-2"></div>
+        <div class="white-space"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q7 exercise</title>
+    <style>
+        .container {
+            position: relative;
+            width: 900px;
+
+        }
+        img{
+            width: 100%;
+        }
+        .boxes-container{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+        }
+        .box{
+            height: 90px;
+        }
+        #first_span{               
+            background-color: rgba(150, 0, 250, 0.3);
+        }
+        #second_span{
+            background-color: rgba(150, 0, 250, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/en/2/27/Bliss_%28Windows_XP%29.png">
+        <div class="boxes-container">
+            <span class="box" id="first_span">
+                Transperent Title
+            </span>
+            <span class="box" id="second_span">
+                Title
+            </span>
+        </div>
+    </div>
+        
+</body>
+</html>
