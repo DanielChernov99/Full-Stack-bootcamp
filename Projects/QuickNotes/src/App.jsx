@@ -3,7 +3,7 @@ import "./styles/App.css";
 import InputCard from "./components/InputCard";
 import NoteList from "./components/NoteList"
 import { Modal } from "@mantine/core";
-import NoteCard from "./components/NoteCard";
+import EditNoteForm from "./components/EditNoteForm";
 
 
 function App() {
@@ -30,6 +30,28 @@ function App() {
     setNotes(newNotes);
   };
 
+  const updateNote = (noteToUpdate) => {
+    if (!noteToUpdate.text.trim()) {
+      alert("Note must have some text in it");
+      return;
+    }
+
+    setNotes((prevNotes) =>
+      prevNotes.map((note) =>
+        note.id === noteToUpdate.id
+          ? {
+              ...note,
+              title: noteToUpdate.title,
+              text: noteToUpdate.text,
+              updatedAt: new Date()
+            }
+          : note
+      )
+    );
+
+    setActiveNote(null);
+  };
+
    const handleNoteClick = (note) => {
     setActiveNote(note);
   };
@@ -50,11 +72,9 @@ function App() {
         centered
       >
         {activeNote && (
-          <NoteCard
+          <EditNoteForm
             note={activeNote}
-            onDeleteNote={closeModal}
-            onNoteClick={() => {}}
-            shouldConfirmDelete={false}
+            onUpdateNote={updateNote}
           />
         )}
       </Modal>
