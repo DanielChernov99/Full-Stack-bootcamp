@@ -9,6 +9,8 @@ import EditNoteForm from "./components/EditNoteForm";
 function App() {
   const [notes, setNotes] = useState(loadFromLocaleStorage);
   const [activeNote, setActiveNote] = useState(null);
+  const [searchText, setSearchText] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const CATEGORIES = [
     { value: "personal", label: "Personal" },
@@ -46,7 +48,7 @@ function App() {
       id: crypto.randomUUID(),
       title:noteData.title,
       text:noteData.text,
-      category: noteData.category  || "personal ",
+      category: noteData.category || "personal ",
       date: new Date()
     }
     const newNotes = [...notes, newNote];
@@ -89,10 +91,47 @@ saveNotes(newNotes);
     setActiveNote(null);
   };
 
+  const fillteredNotes = notes.filter(n => {
+      const search = searchText.trim().toLowerCase()
+      const titleMatches = n.title?.toLowerCase().includes(search)
+      const textMatches =  n.text?.toLowerCase().includes(search)
+
+      const noteCategory = n.category?? "personal"
+      const categoryMatches = selectedCategory==="all" || noteCategory === selectedCategory
+
+      return (titleMatches || textMatches) && categoryMatches;
+  })
+
+  
+
   return (
     <div className="app">
-      <InputCard onAddNote ={addNote} categories={CATEGORIES} />
-      <NoteList onDeleteNote={deleteNote} notes={notes} onNoteClick={handleNoteClick} categories={CATEGORIES} />
+      <InputCard onAddNote={addNote} categories={CATEGORIES} />
+        <input
+          type="text"
+          placeholder="Search notes..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+      <div className="category-filter-row">
+        <button
+          type="button"
+          onClick={() => setSelectedCategory("all")}
+        >
+          All
+        </button>
+
+        {CATEGORIES.map((category) => (
+          <button
+            key={category.value}
+            type="button"
+            onClick={() => setSelectedCategory(category.value)}
+          >
+            {category.label}
+          </button>
+        ))}
+      </div>
+      <NoteList onDeleteNote={deleteNote} notes={fillteredNotes} onNoteClick={handleNoteClick} categories={CATEGORIES} />
       <Modal
         opened={activeNote !== null}
         onClose={closeModal}
