@@ -39,16 +39,30 @@ export default function Exercise2(){
         setData((prev) => ({...prev,displayConversation: name}))
 
     } 
+    const backToList = () => {
+        setData(prev => ({
+            ...prev,
+            displayConversation: null
+        }));
+    };
+    const findConvo = (name) =>{
+        return data.conversations.find(u => u.with === name)
+    }
+    const selectedConversation = findConvo(data.displayConversation);
 
     return (
         <div className="container">
             {data.displayConversation === null ?
             <List
-            contacts={data.conversations.map(u => u.with)}
-            displayConvo={displayConvo}                                                      
+                contacts={data.conversations.map(u => u.with)}
+                displayConvo={displayConvo}                                                      
             />
             :
-            <Conversation/>
+            <Conversation
+                convo={selectedConversation.convo}
+                sender={data.displayConversation}
+                backToList={backToList}
+            />
             
             }
         </div>
