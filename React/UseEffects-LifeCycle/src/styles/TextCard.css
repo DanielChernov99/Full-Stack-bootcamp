@@ -1,0 +1,17 @@
+.card {
+    width: 250px;
+    min-height: 300px;
+    border: 1px solid #999;
+    padding: 16px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 18px;
+}
