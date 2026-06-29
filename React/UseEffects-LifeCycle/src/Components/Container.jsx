@@ -9,6 +9,10 @@ export default function Container(){
     const [cards,setCards] = useState([])
     const [data,setData] = useState([])
 
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    const isSmallScreen = screenWidth < 700;
+
     const updateCards = (posts) =>{
         setCards(posts.map(d =>
             <TextCard 
@@ -29,10 +33,20 @@ export default function Container(){
         getData();       
     },[])
 
+    useEffect(() =>{
+        const handleResize = () =>{
+            setScreenWidth(window.innerWidth)
+        }
+        window.addEventListener("resize",handleResize);
+
+        return () => removeEventListener("resize",handleResize)
+
+    },[])
+
     
     
     return (
-        <div className="cards-container">{cards}</div>     
+        <div className={isSmallScreen? "cards-container small" : "cards-container"}>{cards}</div>     
     )
           
 }
