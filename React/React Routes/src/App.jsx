@@ -29,6 +29,7 @@ const App = (props) => {
         <Routes>
           <Route path="/" element={<Home categories={categories} />} />
           <Route path="/wiki/:category" element={<Entities getCategoryData={getCategoryData} />} />
+          <Route path="/wiki/:category/:entityName" element={<EntityDescription getCategoryData={getCategoryData} />}/>
         </Routes>
       </div>
     </Router>
