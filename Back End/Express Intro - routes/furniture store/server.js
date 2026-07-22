@@ -43,6 +43,18 @@ server.patch("/buy/:name", function (req, res) {
   res.send(item);
 });
 
+server.get("/sale", function (req, res) {
+  const admin = req.query.admin;
+  if (admin === "true") {
+    store.forEach((item) => {
+      if (item.inventory > 10) {
+        item.price *= 0.5;
+      }
+    });
+  }
+  res.send(store);
+});
+
 server.listen(PORT, function () {
   console.log(`Server is running at http://localhost:${PORT}`);
   console.log(`Furniture store: http://localhost:${PORT}/store`);
