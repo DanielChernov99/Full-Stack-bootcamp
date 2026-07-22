@@ -6,6 +6,20 @@ const users = {
   riva: "You need to improve your form, but good perseverance",
   jeremy: "You're incredible",
 };
+const data = {
+  8112: {
+    title: "Name of the Wind",
+    author: "Patrick Rothfuss",
+  },
+  9121: {
+    title: "The Catcher in the Rye",
+    author: "J.D. Salinger",
+  },
+  1081: {
+    title: "The Giver",
+    author: "Lois Lowry",
+  },
+};
 
 const server = express();
 const port = 3000;
@@ -39,6 +53,11 @@ server.get("/details", function (request, response) {
 
   console.log(params.city);
   response.send(params);
+});
+
+server.get("/books/:bookID", function (request, response) {
+  let bookID = request.params.bookID;
+  response.send(data[bookID]);
 });
 
 server.listen(port, function () {
