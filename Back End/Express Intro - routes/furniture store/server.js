@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 
 const server = express();
 const PORT = 8080;
@@ -10,10 +11,39 @@ const store = [
   { name: "picture frame", inventory: 31, price: 70 },
 ];
 
+server.use("/store", express.static(path.join(__dirname, "dist")));
+
 server.get("/", function (req, res) {
   res.send("Server is up and running");
 });
 
+server.get("/priceCheck/:name", function (req, res) {
+  const name = req.params.name;
+  const item = store.find((item) => item.name === name);
+  if (!item) {
+    return res.send({ price: null });
+  }
+  res.send({ price: item.price });
+});
+
+server.patch("/buy/:name", function (req, res) {
+  const name = req.params.name;
+  const item = store.find((item) => item.name === name);
+
+  if (!item) {
+    return res.send({ error: "Item not found" });
+  }
+
+  if (item.inventory <= 0) {
+    return res.send({ error: "Item is out of stock" });
+  }
+
+  item.inventory -= 1;
+
+  res.send(item);
+});
+
 server.listen(PORT, function () {
   console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`Furniture store: http://localhost:${PORT}/store`);
 });
