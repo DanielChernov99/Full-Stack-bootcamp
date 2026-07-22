@@ -8,13 +8,9 @@ const users = {
 };
 
 const server = express();
-
 const port = 3000;
 
-server.get("/", function (request, response) {
-  console.log("Someone has come into the server. Brace yourselves.");
-  response.send("Ending the cycle, thanks for visiting");
-});
+server.use(express.static(path.join(__dirname, "dist")));
 
 server.get("/maps", function (request, response) {
   response.send("Here's some stuff related to maps");
@@ -30,6 +26,7 @@ server.get("/life", function (request, response) {
 
 server.get("/users/:username", function (request, response) {
   const username = request.params.username;
+
   if (!(username in users)) {
     response.send(`No such user as ${username}`);
   } else {
@@ -37,10 +34,10 @@ server.get("/users/:username", function (request, response) {
   }
 });
 
-server.get("/details", (request, response) => {
-  let params = request.query;
-  console.log(params.city);
+server.get("/details", function (request, response) {
+  const params = request.query;
 
+  console.log(params.city);
   response.send(params);
 });
 
