@@ -7,13 +7,13 @@ const router = express.Router();
 router.get("/", function (req, res) {
   const posts = postModel.getPosts();
 
-  res.status(200).json(posts);
+  res.success(posts);
 });
 
 router.post("/", validatePost, function (req, res) {
   const newPost = postModel.createPost(req.validatedBody);
 
-  res.status(201).json(newPost);
+  res.success(newPost, 201);
 });
 
 module.exports = router;

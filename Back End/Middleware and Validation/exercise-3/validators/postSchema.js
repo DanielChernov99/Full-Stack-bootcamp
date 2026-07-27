@@ -9,7 +9,7 @@ const postSchema = z.object({
   content: z
     .string()
     .min(10, "Content must be at least 10 characters")
-    .max(500, "Content must be at most 500 characters"),
+    .max(1000, "Content must be at most 1000 characters"),
 
   tags: z.array(z.string()),
 
