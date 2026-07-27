@@ -1,15 +1,13 @@
 const express = require("express");
 const logger = require("./middleware/logger");
 const requestCounter = require("./middleware/requestCounter");
-const validateId = require("./middleware/validateId");
-const checkResourceExists = require("./middleware/checkResourceExists");
 const errorHandler = require("./middleware/errorHandler");
-
-const users = require("./data/users");
+const userRouter = require("./routes/userRouter");
 
 const app = express();
 const PORT = 3000;
 
+app.use(express.json());
 app.use(logger);
 app.use(requestCounter);
 
@@ -27,24 +25,7 @@ app.get("/about", function (req, res) {
   });
 });
 
-app.get("/users", function (req, res) {
-  res.status(200).json(users);
-});
-
-app.get("/users/:id", validateId, checkResourceExists, function (req, res) {
-  res.status(200).json(req.user);
-});
-
-app.post("/users", function (req, res) {
-  const newUser = {
-    id: users.length + 1,
-    name: req.body.name,
-  };
-
-  users.push(newUser);
-
-  res.status(201).json(newUser);
-});
+app.use("/users", userRouter);
 
 app.use(errorHandler);
 

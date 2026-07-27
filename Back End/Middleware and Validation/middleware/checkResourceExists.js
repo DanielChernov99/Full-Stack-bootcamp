@@ -1,7 +1,7 @@
-const users = require("../data/users");
+const userModel = require("../models/userModel");
 
 function checkResourceExists(req, res, next) {
-  const user = users.find((user) => user.id === req.userId);
+  const user = userModel.getUserById(req.userId);
   if (!user) {
     const error = new Error("User not found");
     error.statusCode = 404;
