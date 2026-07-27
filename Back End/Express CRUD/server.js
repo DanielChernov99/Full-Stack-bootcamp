@@ -1,23 +1,13 @@
 const express = require("express");
-const path = require("path");
+const wordRoutes = require("./routes/wordRoutes");
 
 const app = express();
-app.use(express.static(path.join(__dirname, "dist")));
-app.use(express.static(path.join(__dirname, "node_modules")));
 
-const wonders = [
-  { name: "Mount Everest", location: "Nepal", visited: false },
-  { name: "Grand Canyon", location: "Arizona", visited: false },
-  { name: "Botanical Gardens", location: "Singapore", visited: true },
-  { name: "Pantheon", location: "Greece", visited: false },
-  { name: "Colosseum", location: "Italy", visited: true },
-];
+app.use(express.json());
+app.use(wordRoutes);
 
-app.get("/wonders", function (req, res) {
-  res.send(wonders);
-});
+const port = 1337;
 
-const port = 1337; //because why not
 app.listen(port, function () {
-  console.log(`Server running on ${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
