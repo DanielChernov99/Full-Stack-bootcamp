@@ -35,11 +35,7 @@ function addSentence(sentence) {
   for (const word of words) {
     const countBeforeAdding = getWordCount(word);
 
-    if (countBeforeAdding === 0) {
-      numNewWords++;
-    } else {
-      numOldWords++;
-    }
+    countBeforeAdding === 0 ? numNewWords++ : numOldWords++;
 
     addWord(word);
   }
