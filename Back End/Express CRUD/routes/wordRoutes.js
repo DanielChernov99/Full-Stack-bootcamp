@@ -9,7 +9,12 @@ router.get("/sanity", function (req, res) {
 });
 
 // Exercise 2
-router.get("/word/:word");
+router.get("/word/:word", function (req, res) {
+  const word = req.params.word;
+  const wordCount = wordModel.getWordCount(word);
+
+  res.send({ count: wordCount });
+});
 
 // Exercise 3
 
