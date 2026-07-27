@@ -3,6 +3,8 @@ const wordRoutes = require("./routes/wordRoutes");
 
 const app = express();
 
+const wordCounter = {};
+
 app.use(express.json());
 app.use(wordRoutes);
 
