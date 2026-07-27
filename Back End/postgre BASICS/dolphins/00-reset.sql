@@ -11,5 +11,5 @@ INSERT INTO dolphin(name,color,height)
 VALUES
     ('Daron', 'gray', 3),
     ('Ron', 'blue', 1),
-    ('Simon', 'green', 4),
-    ('Bron', 'brown', 2);
+    ('Bob', 'green', 4),
+    ('Robert', 'brown', 2);
