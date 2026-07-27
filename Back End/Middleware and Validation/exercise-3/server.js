@@ -1,4 +1,6 @@
 const express = require("express");
+const postRouter = require("./routes/postRouter");
+const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
 const PORT = 3000;
@@ -10,6 +12,10 @@ app.get("/", function (req, res) {
     message: "Exercise 3 API is running",
   });
 });
+
+app.use("/posts", postRouter);
+
+app.use(errorHandler);
 
 app.listen(PORT, function () {
   console.log(`Exercise 3 server is running on port ${PORT}`);
