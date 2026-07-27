@@ -60,12 +60,4 @@ router.delete("/word/:word", function (req, res) {
   });
 });
 
-// Extension 1
-
-// Extension 2
-
-// Extension 3
-
-// Extension 4
-
 module.exports = router;
